@@ -53,15 +53,20 @@ public abstract class ExampleMixin {
         ItemStack sourceStack = source.getItem();
         ItemStack targetStack = target.getItem();
 
-        // รวมจำนวนทั้งหมดเข้าด้วยกัน
-        int newCount = targetStack.getCount() + sourceStack.getCount();
-        
-        // ตั้งค่าจำนวนใหม่ให้ตัวเป้าหมาย (ตัวที่ใหม่กว่า)
-        targetStack.setCount(newCount);
-        target.setItem(targetStack);
+        // 1. เช็คก่อนว่าไอเทมนี้อนุญาตให้ Stack ได้หรือไม่ (อาวุธ/ชุดเกราะจะมีค่านี้เป็น 1)
+        // และต้องเป็นไอเทมชนิดเดียวกันเป๊ะๆ
+        if (targetStack.getMaxStackSize() > 1 && ItemStack.isSameItemSameComponents(sourceStack, targetStack)) {
+            
+            // 2. รวมจำนวนทั้งหมดเข้าด้วยกัน
+            int newCount = targetStack.getCount() + sourceStack.getCount();
+            
+            // 3. ตั้งค่าจำนวนใหม่ให้ตัวเป้าหมาย
+            targetStack.setCount(newCount);
+            target.setItem(targetStack);   
 
-        // ลบตัวเก่าทิ้ง
-        source.discard();
+            // 5. ลบตัวเก่าทิ้ง
+            source.discard();
+        }
     }
 
     @Inject(method = "playerTouch", at = @At("HEAD"), cancellable = true)
