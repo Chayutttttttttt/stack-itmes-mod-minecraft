@@ -1,6 +1,12 @@
 package com.example;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+// import net.minecraft.server.level.ServerEntity;
+import net.minecraft.world.entity.item.ItemEntity;
+// import net.minecraft.world.item.ItemStack;
+import net.minecraft.network.chat.Component;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,10 +21,7 @@ public class TemplateMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Item Label Mod has been initialized!");
 	}
 }
+
