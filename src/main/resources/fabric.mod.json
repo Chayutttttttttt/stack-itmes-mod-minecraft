@@ -1,11 +1,11 @@
 {
 	"schemaVersion": 1.0,
-	"id": "stack-item-1.0-v1.21-",
+	"id": "stack-item-1.0-v1.21",
 	"version": "${version}",
-	"name": "Template Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "stack-item-1.0-v1.21-",
+	"description": "ITEM STACK!!!",
 	"authors": [
-		"Me!"
+		"MisTaKe"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
