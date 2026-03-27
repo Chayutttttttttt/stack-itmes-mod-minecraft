@@ -4,7 +4,8 @@
 
 ## แรงบันดาลใจ
 
-มาจาก พี่ [tackle4826 - Tackle Minecraft](https://youtube.com/@tackle4826mc?si=eLty_NuPxwZmp4U-) ขอขอบคุณในโอกาศนี้ด้วยครับ 🙏 
+มาจาก พี่ [tackle4826 - Tackle Minecraft](https://youtube.com/@tackle4826mc?si=eLty_NuPxwZmp4U-) 
+ขอขอบคุณเเรงบัลดาลใจนี้ด้วยครับ 🙏 
 
 ## ⌛ การติดตั้งม็อด
 
