@@ -4,7 +4,7 @@
 
 ## แรงบันดาลใจ
 
-มาจาก พี่ tackle4826 - Tackle Minecraft ขอขอบคุณในโอกาศนี้ด้วยครับ 🙏 
+มาจาก พี่ [tackle4826 - Tackle Minecraft](https://youtube.com/@tackle4826mc?si=eLty_NuPxwZmp4U-) ขอขอบคุณในโอกาศนี้ด้วยครับ 🙏 
 
 ## ⌛ การติดตั้งม็อด
 
@@ -26,3 +26,31 @@ COMING SOON...
 
 **สร้างเฉพาะ Minecraft Fabric เท่านั้น**
 
+# 📦 Stack Items Mod
+
+Welcome to **Stack Items Mod** – a mod that enhances the ability to stack items on the ground.
+
+## 💡 Inspiration
+
+Inspired by [tackle4826 - Tackle Minecraft](https://youtube.com/@tackle4826mc?si=eLty_NuPxwZmp4U-)  
+Special thanks for the inspiration 🙏
+
+## ⌛ Installation
+
+COMING SOON...
+
+## 🛠️ Development
+
+### Build the Mod:
+
+```bash
+./gradlew clean build
+```
+
+### Run Minecraft in Dev Mode:
+
+```bash
+./gradlew runClient
+```
+
+**This mod is built for Minecraft Fabric only.**
