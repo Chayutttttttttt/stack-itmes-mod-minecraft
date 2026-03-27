@@ -1,6 +1,6 @@
 {
-	"schemaVersion": 1.0,
-	"id": "stack-item-1.0-v1.21",
+	"schemaVersion": 1,
+	"id": "stack-item-1-0-v1-21",
 	"version": "${version}",
 	"name": "stack items",
 	"description": "ITEM STACK!!!",
