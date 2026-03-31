@@ -16,9 +16,24 @@ public class HopperMixin {
     @Inject(method = "addItem(Lnet/minecraft/world/Container;Lnet/minecraft/world/entity/item/ItemEntity;)Z", at = @At("HEAD"), cancellable = true)
     private static void fixInfHopperVoid(Container container, ItemEntity itemEntity, CallbackInfoReturnable<Boolean> cir) {
         
-        if (container == null) return; 
+        if (container == null || itemEntity == null) return; 
 
         ItemStack itemStack = itemEntity.getItem();
+
+        boolean canAccept = false;
+        for (int i = 0; i < container.getContainerSize();i++) {
+            ItemStack slotStack = container.getItem(i);
+
+            if (slotStack.isEmpty() || (canMerge(slotStack, itemStack) && slotStack.getCount() < slotStack.getMaxStackSize())) {
+                canAccept = true;
+                break;
+            }
+        }
+
+        if (!canAccept) {
+            cir.setReturnValue(false);
+            return;
+        }
         
         ItemStack toInsert = itemStack.copy();
 
@@ -43,5 +58,9 @@ public class HopperMixin {
             cir.setReturnValue(false);
         }
 
+    }
+
+    private static boolean canMerge(ItemStack stack1, ItemStack stack2) {
+        return stack1.getItem() == stack2.getItem() && ItemStack.isSameItem(stack1, stack2);
     }
 }

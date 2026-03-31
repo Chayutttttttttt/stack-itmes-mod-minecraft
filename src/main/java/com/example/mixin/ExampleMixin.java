@@ -32,7 +32,7 @@ public abstract class ExampleMixin {
         }
 
         var nearbyItems = entity.level().getEntitiesOfClass(ItemEntity.class, 
-                entity.getBoundingBox().inflate(5.0D), 
+                entity.getBoundingBox().inflate(2.0D), 
                 (other) -> other != entity && other.isAlive());
 
         for (ItemEntity otherItem : nearbyItems) {
