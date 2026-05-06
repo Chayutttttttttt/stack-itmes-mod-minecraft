@@ -7,7 +7,6 @@ import net.minecraft.world.entity.item.ItemEntity;
 // import net.minecraft.world.item.ItemStack;
 import net.minecraft.network.chat.Component;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -3,6 +3,7 @@ package com.example.mixin;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Player;
 
 import org.jspecify.annotations.NonNull;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,8 +11,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import net.minecraft.world.entity.player.Player;
-
 @Mixin(ItemEntity.class)
 public abstract class ExampleMixin {
 
@@ -32,7 +31,7 @@ public abstract class ExampleMixin {
         }
 
         var nearbyItems = entity.level().getEntitiesOfClass(ItemEntity.class, 
-                entity.getBoundingBox().inflate(2.0D), 
+                entity.getBoundingBox().inflate(5.0D), 
                 (other) -> other != entity && other.isAlive());
 
         for (ItemEntity otherItem : nearbyItems) {
@@ -87,7 +86,7 @@ public abstract class ExampleMixin {
 
             if (actuallyTransferred > 0) {
                 itemInEntity.shrink(actuallyTransferred);
-                
+                serverWorld.playSound
                 if (itemInEntity.isEmpty()) {
                     entity.discard();
                 } else {
