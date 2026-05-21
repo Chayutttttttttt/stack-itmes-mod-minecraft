@@ -36,16 +36,11 @@ public class HopperMixin {
         }
         
         ItemStack toInsert = itemStack.copy();
-
-        int maxInsert = toInsert.getMaxStackSize();
-
-        if (toInsert.getCount() > maxInsert) {
-            toInsert.setCount(maxInsert);
-        }
+        toInsert.setCount(1);
 
         ItemStack remainder = HopperBlockEntity.addItem(null, container, toInsert, null);
 
-        int actAccepted = maxInsert - remainder.getCount();
+        int actAccepted = 1 - remainder.getCount();
 
         if (actAccepted > 0) {
             itemStack.shrink(actAccepted);  
