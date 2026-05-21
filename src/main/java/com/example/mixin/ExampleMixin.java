@@ -86,7 +86,6 @@ public abstract class ExampleMixin {
 
             if (actuallyTransferred > 0) {
                 itemInEntity.shrink(actuallyTransferred);
-                serverWorld.playSound
                 if (itemInEntity.isEmpty()) {
                     entity.discard();
                 } else {
