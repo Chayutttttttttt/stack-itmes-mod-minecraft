@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
 @Mixin(ItemEntity.class)
 public abstract class ItemEntityMixin  {
 
@@ -45,6 +46,11 @@ public abstract class ItemEntityMixin  {
     }
 
     private void mergeInfinite(ItemEntity source, ItemEntity target) {
+        boolean sourceMoving = source.isInWater() && (Math.abs(source.getDeltaMovement().x) > 1e-7);
+        boolean targetMoving = target.isInWater() && (Math.abs(target.getDeltaMovement().x) > 1e-7);
+
+        if (sourceMoving || targetMoving) return;
+
         ItemStack sourceStack = source.getItem();
         ItemStack targetStack = target.getItem();
 
